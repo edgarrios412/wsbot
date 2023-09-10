@@ -1,0 +1,50 @@
+2023/09/10-08:49:18.923 424 Reusing MANIFEST C:\Users\Janus\Desktop\Proyectos\bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/09/10-08:49:18.923 424 Recovering log #869
+2023/09/10-08:49:19.049 424 Reusing old log C:\Users\Janus\Desktop\Proyectos\bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000869.log 
+2023/09/10-08:50:56.911 1544 Level-0 table #891: started
+2023/09/10-08:50:56.935 1544 Level-0 table #891: 1243125 bytes OK
+2023/09/10-08:50:56.937 1544 Delete type=0 #869
+2023/09/10-08:51:31.729 1544 Compacting 1@0 + 0@1 files
+2023/09/10-08:51:31.759 1544 Generated table #892@0: 17313 keys, 398764 bytes
+2023/09/10-08:51:31.761 1544 Generated table #893@0: 1098 keys, 16756 bytes
+2023/09/10-08:51:31.761 1544 Compacted 1@0 + 0@1 files => 415520 bytes
+2023/09/10-08:51:31.762 1544 compacted to: files[ 0 2 15 0 0 0 0 ]
+2023/09/10-08:51:31.762 1544 Delete type=2 #891
+2023/09/10-08:55:10.478 858 Compacting 1@1 + 10@2 files
+2023/09/10-08:55:10.570 858 Generated table #894@1: 83679 keys, 2258811 bytes
+2023/09/10-08:55:10.606 858 Generated table #895@1: 12399 keys, 2214597 bytes
+2023/09/10-08:55:10.630 858 Generated table #896@1: 3841 keys, 2154549 bytes
+2023/09/10-08:55:10.655 858 Generated table #897@1: 3866 keys, 2153740 bytes
+2023/09/10-08:55:10.681 858 Generated table #898@1: 3709 keys, 2157437 bytes
+2023/09/10-08:55:10.727 858 Generated table #899@1: 23421 keys, 2198978 bytes
+2023/09/10-08:55:10.791 858 Generated table #900@1: 29609 keys, 2256194 bytes
+2023/09/10-08:55:10.841 858 Generated table #901@1: 23320 keys, 2202298 bytes
+2023/09/10-08:55:10.874 858 Generated table #902@1: 10093 keys, 2132662 bytes
+2023/09/10-08:55:10.945 858 Generated table #903@1: 76165 keys, 2217915 bytes
+2023/09/10-08:55:10.952 858 Generated table #904@1: 6197 keys, 134344 bytes
+2023/09/10-08:55:10.952 858 Compacted 1@1 + 10@2 files => 22081525 bytes
+2023/09/10-08:55:10.954 858 compacted to: files[ 0 1 16 0 0 0 0 ]
+2023/09/10-08:55:10.954 858 Delete type=2 #873
+2023/09/10-08:55:10.954 858 Delete type=2 #874
+2023/09/10-08:55:10.954 858 Delete type=2 #875
+2023/09/10-08:55:10.954 858 Delete type=2 #876
+2023/09/10-08:55:10.954 858 Delete type=2 #877
+2023/09/10-08:55:10.954 858 Delete type=2 #878
+2023/09/10-08:55:10.954 858 Delete type=2 #879
+2023/09/10-08:55:10.954 858 Delete type=2 #880
+2023/09/10-08:55:10.954 858 Delete type=2 #881
+2023/09/10-08:55:10.954 858 Delete type=2 #882
+2023/09/10-08:55:10.954 858 Delete type=2 #892
+2023/09/10-08:55:32.122 858 Compacting 1@1 + 5@2 files
+2023/09/10-08:55:32.218 858 Generated table #905@1: 106873 keys, 2256133 bytes
+2023/09/10-08:55:32.312 858 Generated table #906@1: 105465 keys, 2254526 bytes
+2023/09/10-08:55:32.405 858 Generated table #907@1: 104942 keys, 2256149 bytes
+2023/09/10-08:55:32.478 858 Generated table #908@1: 75681 keys, 1634502 bytes
+2023/09/10-08:55:32.478 858 Compacted 1@1 + 5@2 files => 8401310 bytes
+2023/09/10-08:55:32.479 858 compacted to: files[ 0 0 15 0 0 0 0 ]
+2023/09/10-08:55:32.479 858 Delete type=2 #883
+2023/09/10-08:55:32.479 858 Delete type=2 #885
+2023/09/10-08:55:32.479 858 Delete type=2 #886
+2023/09/10-08:55:32.479 858 Delete type=2 #887
+2023/09/10-08:55:32.480 858 Delete type=2 #888
+2023/09/10-08:55:32.480 858 Delete type=2 #893
