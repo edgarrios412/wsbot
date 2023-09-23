@@ -1,12 +1,3 @@
-2023/09/10-10:43:27.260 2ebc Reusing MANIFEST C:\Users\Janus\Desktop\Proyectos\bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/09/10-10:43:27.260 2ebc Recovering log #1414
-2023/09/10-10:43:27.517 2ebc Reusing old log C:\Users\Janus\Desktop\Proyectos\bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001414.log 
-2023/09/10-10:43:39.942 2df4 Level-0 table #1419: started
-2023/09/10-10:43:39.962 2df4 Level-0 table #1419: 1073329 bytes OK
-2023/09/10-10:43:39.963 2df4 Delete type=0 #1414
-2023/09/10-10:43:42.075 3228 Compacting 1@1 + 1@2 files
-2023/09/10-10:43:42.164 3228 Generated table #1420@1: 36969 keys, 1593534 bytes
-2023/09/10-10:43:42.164 3228 Compacted 1@1 + 1@2 files => 1593534 bytes
-2023/09/10-10:43:42.168 3228 compacted to: files[ 0 0 1 0 0 0 0 ]
-2023/09/10-10:43:42.168 3228 Delete type=2 #1416
-2023/09/10-10:43:42.168 3228 Delete type=2 #1419
+2023/09/23-11:55:04.796 3c1c Reusing MANIFEST C:\Users\Janus\Desktop\Proyectos\botesting\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/09/23-11:55:04.796 3c1c Recovering log #166
+2023/09/23-11:55:04.923 3c1c Reusing old log C:\Users\Janus\Desktop\Proyectos\botesting\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000166.log 

@@ -1,10 +1,9 @@
 require("dotenv").config()
-const apiKey = process.env.API
 const OpenAI = require("openai")
 const chat = require("./messages")
 
 const openai = new OpenAI({
-    apiKey: apiKey, 
+    apiKey: process.env.API, 
 });
 
 module.exports = async (msg, from,name) => {
@@ -19,7 +18,7 @@ module.exports = async (msg, from,name) => {
       console.log("No existe")
       chat[from] = [{
           "role": "system",
-          "content": "Tu nombre es David eres vendendor, Siempre debes saludar cordialmente a " + name + " es tu cliente. Vendes yogures de mora, fresa y piña, eres amable, el precio es de 2500 por unidad y el domicilio en zipaquira cuesta 1000 pesos, si quiere comprar enviale  el nequi 3054999999 y el monto total, tus respuestas son breves y puedes enviar emojis"
+          "content": "Eres vendedor de tacos, burritos y quesadillas en el negocio Casa Azteca Express te llamas Santiago, Siempre debes saludar cordialmente a " + name + " es tu cliente. tus respuestas son breves y puedes enviar emojis"
       },{
         "role":"user",
         "content":msg
