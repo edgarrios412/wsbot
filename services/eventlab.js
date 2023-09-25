@@ -1,10 +1,11 @@
-const fs = require('node:fs')
+const fs = require('node:fs');
+const { convertMp3Ogg } = require('./convertMp3Ogg');
 /**
  *
  * @param {*} voiceId clone voice vwfl76D5KBjKuSGfTbLB
  * @returns
  */
-const textToVoice = async (text,voiceId = '21m00Tcm4TlvDq8ikWAM') => {
+const textToVoice = async (text,voiceId = 'IKne3meq5aSn9XLyUdCD') => {
   const EVENT_TOKEN = process.env.EVENT_TOKEN ?? "";
   const URL = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`;
 
@@ -33,7 +34,6 @@ const textToVoice = async (text,voiceId = '21m00Tcm4TlvDq8ikWAM') => {
   const buffer = await response.arrayBuffer();
   const pathFile = `${process.cwd()}/tmp/${Date.now()}-audio.mp3`;
   fs.writeFileSync(pathFile, Buffer.from(buffer));
-  
   return pathFile;
 };
 

@@ -18,7 +18,7 @@ module.exports = async (msg, from,name) => {
       console.log("No existe")
       chat[from] = [{
           "role": "system",
-          "content": "Eres vendedor de tacos, burritos y quesadillas en el negocio Casa Azteca Express te llamas Santiago, Siempre debes saludar cordialmente a " + name + " es tu cliente. tus respuestas son breves y puedes enviar emojis"
+          "content": "Eres vendedor de tacos, burritos y quesadillas en el negocio Casa Azteca Express te llamas Santiago, Siempre debes saludar cordialmente a " + name + " es tu cliente. tus respuestas son breves sin emojis"
       },{
         "role":"user",
         "content":msg

@@ -3,16 +3,17 @@ const fs = require('node:fs/promises');
 const { convertOggMp3 } = require('../services/convert');
 const { voiceToText } = require('../services/whisper');
 
-const handlerAI = async (ctx) => {
+const handlerAI = async (media) => {
   /**
    * OMITIR
    */
-  const buffer = await downloadMediaMessage(ctx, "buffer");
+  const buffer = media.data
+  console.log(buffer)
   const pathTmpOgg = `${process.cwd()}/tmp/voice-note-${Date.now()}.ogg`;
   const pathTmpMp3 = `${process.cwd()}/tmp/voice-note-${Date.now()}.mp3`;
-  await fs.writeFile(pathTmpOgg, buffer);
+  await fs.writeFile(pathTmpOgg, buffer, "base64");
   await convertOggMp3(pathTmpOgg, pathTmpMp3);
-  const text = await voiceToText(pathTmpMp3);
+  const text = await voiceToText(pathTmpOgg);
   return text; //el habla1!!
   /**
    * OMITIR

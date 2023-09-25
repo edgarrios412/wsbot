@@ -7,7 +7,11 @@ const { textToVoice } = require("./services/eventlab");
 
 const client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: {headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions']}
+    puppeteer: {
+        executablePath:"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+        headless: true, 
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions']
+    }
 });
 
 client.on('qr', qr => {
@@ -22,16 +26,22 @@ client.on('ready', () => {
 
 client.on("message", async (message) => {
     if(message.hasMedia){
-        const text = await handlerAI(message)
-        console.log(text)
-        client.sendMessage(message.from, text)
+        const media = await message.downloadMedia()
+        const text = await handlerAI(media)
+        gpt(text, message.from.split("@")[0], message._data.notifyName).then((data) => {
+            textToVoice(data).then((path) => {
+                const media = MessageMedia.fromFilePath(path);
+                client.sendMessage(message.from,media)
+            })
+        })
+        // client.sendMessage(message.from, text)
     }
     if(message.body[0] == "-"){
         gpt(message.body, message.from.split("@")[0], message._data.notifyName).then((data) => {
-          textToVoice(data).then((path) => {
-              const media = MessageMedia.fromFilePath(path);
-              return client.sendMessage(message.from,media)
-          })
+        //   textToVoice(data).then((path) => {
+            //   const media = MessageMedia.fromFilePath(path);
+              client.sendMessage(message.from,data)
+        //   })
         if(data.length == 0) return client.sendMessage(message.from,"No hemos conseguido la respuesta")
       })}
 });
