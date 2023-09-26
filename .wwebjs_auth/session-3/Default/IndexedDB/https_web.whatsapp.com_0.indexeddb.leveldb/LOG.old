@@ -1,0 +1,7 @@
+2023/09/26-09:09:53.041 15f8 Creating DB C:\Users\Janus\Desktop\Proyectos\botesting\.wwebjs_auth\session-3\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2023/09/26-09:09:53.049 15f8 Reusing MANIFEST C:\Users\Janus\Desktop\Proyectos\botesting\.wwebjs_auth\session-3\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/09/26-09:09:53.076 3120 Level-0 table #5: started
+2023/09/26-09:09:53.079 3120 Level-0 table #5: 7439 bytes OK
+2023/09/26-09:09:53.081 3120 Delete type=0 #3
+2023/09/26-09:09:53.081 30f4 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/09/26-09:09:53.477 3120 Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)

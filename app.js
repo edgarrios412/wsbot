@@ -1,49 +1,126 @@
-const qrcode = require('qrcode-terminal');
+// const qrcode = require('qrcode-terminal');
+const qrc = require("qr-image")
 const gpt = require("./gpt")
 const { Client, LocalAuth, MessageMedia} = require('whatsapp-web.js');
-const axios = require('axios');
+// const axios = require('axios');
+const fs = require("fs")
 const { handlerAI } = require("./utils/utils");
 const { textToVoice } = require("./services/eventlab");
 
-const client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: {
-        executablePath:"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
-        headless: true, 
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions']
+const clients = [
+    {
+        id:1
+    },{
+        id:2
     }
-});
+]
 
-client.on('qr', qr => {
-    console.log("hola")
-    qrcode.generate(qr, {small: true});
-});
+clients.map((clientInfo) => {
+    const client = new Client({
+        authStrategy: new LocalAuth({
+            clientId: clientInfo.id
+        }),
+        puppeteer: {
+            executablePath:"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+            headless: true, 
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions']
+        }
+    });
 
-client.on('ready', () => {
-    console.log('Client is ready!')
-});
+    client.on('qr', qr => {
+        // qrcode.generate(qr, {small: true});
+        var qrPng = qrc.image(qr, { type: 'png' });
+        qrPng.pipe(require('fs').createWriteStream(`qr/qr${clientInfo.id}.png`));
+        console.log(`Codigo QR${clientInfo.id} generado exitosamente`)
+      });
 
-
-client.on("message", async (message) => {
-    if(message.hasMedia){
-        const media = await message.downloadMedia()
-        const text = await handlerAI(media)
-        gpt(text, message.from.split("@")[0], message._data.notifyName).then((data) => {
-            textToVoice(data).then((path) => {
-                const media = MessageMedia.fromFilePath(path);
-                client.sendMessage(message.from,media)
+    client.on('ready', () => {
+        fs.unlink(`qr/qr${clientInfo.id}.png`,(err) => null)
+        console.log(`Client(${clientInfo.id}) is ready!`)
+    });
+    
+    client.on("message", async (message) => {
+        if(message.hasMedia){
+            const media = await message.downloadMedia()
+            const text = await handlerAI(media)
+            gpt(clientInfo.id, text, message.from.split("@")[0], message._data.notifyName).then((data) => {
+                textToVoice(data).then((path) => {
+                    const media = MessageMedia.fromFilePath(path);
+                    client.sendMessage(message.from,media)
+                })
             })
-        })
-        // client.sendMessage(message.from, text)
-    }
-    if(message.body[0] == "-"){
-        gpt(message.body, message.from.split("@")[0], message._data.notifyName).then((data) => {
-        //   textToVoice(data).then((path) => {
-            //   const media = MessageMedia.fromFilePath(path);
-              client.sendMessage(message.from,data)
-        //   })
-        if(data.length == 0) return client.sendMessage(message.from,"No hemos conseguido la respuesta")
-      })}
-});
+        }
+        if(message.body[0] == "-"){
+            gpt(clientInfo.id, message.body, message.from.split("@")[0], message._data.notifyName).then((data) => {
+                  client.sendMessage(message.from,data)
+          })}
+    });
 
-client.initialize();
+
+    client.initialize()
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////
+//// CODIGO BASE ////
+////////////////////
+
+
+// const client = new Client({
+//     authStrategy: new LocalAuth({
+//         clientId: "client-one"
+//     }),
+//     puppeteer: {
+//         executablePath:"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+//         headless: true, 
+//         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions']
+//     }
+// });
+
+// client.on('qr', qr => {
+//     // qrcode.generate(qr, {small: true});
+//     var qrPng = qrc.image(qr, { type: 'png' });
+//     qrPng.pipe(require('fs').createWriteStream('qr/qr.png'));
+//     console.log("Codigo QR generado exitosamente")
+//   });
+
+// client.on('ready', () => {
+//     console.log('Client is ready!')
+// });
+
+// client.on("message", async (message) => {
+//     if(message.hasMedia){
+//         const media = await message.downloadMedia()
+//         const text = await handlerAI(media)
+//         gpt(text, message.from.split("@")[0], message._data.notifyName).then((data) => {
+//             textToVoice(data).then((path) => {
+//                 const media = MessageMedia.fromFilePath(path);
+//                 client.sendMessage(message.from,media)
+//             })
+//         })
+//     }
+//     if(message.body[0] == "-"){
+//         gpt(message.body, message.from.split("@")[0], message._data.notifyName).then((data) => {
+//               client.sendMessage(message.from,data)
+//       })}
+// });
+
+// client.initialize();
+
+/////////////////////
+//// CODIGO BASE ////
+////////////////////

@@ -1,12 +1,19 @@
 require("dotenv").config()
 const OpenAI = require("openai")
-const chat = require("./messages")
+const fs = require("fs")
 
 const openai = new OpenAI({
-    apiKey: process.env.API, 
+  apiKey: process.env.API, 
 });
 
-module.exports = async (msg, from,name) => {
+
+module.exports = async (id, msg, from,name) => {
+  if(!fs.existsSync(`./messages/${id}.js`)){
+    const contenido = `let chat = {};
+    module.exports = chat;`;
+    fs.writeFileSync(`./messages/${id}.js`, contenido, (err) => null)
+  }
+  const chat = require(`./messages/${id}.js`)
   console.log(name)
     if(chat[from]){
       console.log("Si existe")

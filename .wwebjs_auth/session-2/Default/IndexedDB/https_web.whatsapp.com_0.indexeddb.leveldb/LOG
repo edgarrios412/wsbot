@@ -1,0 +1,30 @@
+2023/09/26-09:42:30.765 ba8 Reusing MANIFEST C:\Users\Janus\Desktop\Proyectos\botesting\.wwebjs_auth\session-2\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/09/26-09:42:30.766 ba8 Recovering log #666
+2023/09/26-09:42:30.805 ba8 Reusing old log C:\Users\Janus\Desktop\Proyectos\botesting\.wwebjs_auth\session-2\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000666.log 
+2023/09/26-09:42:48.064 ba8 Level-0 table #680: started
+2023/09/26-09:42:48.081 ba8 Level-0 table #680: 1018381 bytes OK
+2023/09/26-09:42:48.083 ba8 Delete type=0 #666
+2023/09/26-09:42:49.095 3c84 Compacting 1@1 + 10@2 files
+2023/09/26-09:42:49.136 3c84 Generated table #681@1: 25307 keys, 2188622 bytes
+2023/09/26-09:42:49.160 3c84 Generated table #682@1: 3771 keys, 2158919 bytes
+2023/09/26-09:42:49.184 3c84 Generated table #683@1: 4017 keys, 2158237 bytes
+2023/09/26-09:42:49.208 3c84 Generated table #684@1: 3648 keys, 2160358 bytes
+2023/09/26-09:42:49.241 3c84 Generated table #685@1: 21047 keys, 2190143 bytes
+2023/09/26-09:42:49.290 3c84 Generated table #686@1: 30117 keys, 2253738 bytes
+2023/09/26-09:42:49.331 3c84 Generated table #687@1: 36190 keys, 2210046 bytes
+2023/09/26-09:42:49.374 3c84 Generated table #688@1: 70217 keys, 2211686 bytes
+2023/09/26-09:42:49.427 3c84 Generated table #689@1: 104798 keys, 2256758 bytes
+2023/09/26-09:42:49.447 3c84 Generated table #690@1: 38567 keys, 830643 bytes
+2023/09/26-09:42:49.447 3c84 Compacted 1@1 + 10@2 files => 20619150 bytes
+2023/09/26-09:42:49.448 3c84 compacted to: files[ 0 0 10 0 0 0 0 ]
+2023/09/26-09:42:49.448 3c84 Delete type=2 #668
+2023/09/26-09:42:49.448 3c84 Delete type=2 #669
+2023/09/26-09:42:49.448 3c84 Delete type=2 #670
+2023/09/26-09:42:49.448 3c84 Delete type=2 #671
+2023/09/26-09:42:49.448 3c84 Delete type=2 #672
+2023/09/26-09:42:49.448 3c84 Delete type=2 #673
+2023/09/26-09:42:49.448 3c84 Delete type=2 #674
+2023/09/26-09:42:49.448 3c84 Delete type=2 #675
+2023/09/26-09:42:49.448 3c84 Delete type=2 #676
+2023/09/26-09:42:49.448 3c84 Delete type=2 #677
+2023/09/26-09:42:49.449 3c84 Delete type=2 #680
