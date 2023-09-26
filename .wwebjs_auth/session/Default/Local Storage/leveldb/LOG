@@ -1,6 +1,0 @@
-2023/09/26-08:48:51.717 372c Reusing MANIFEST C:\Users\Janus\Desktop\Proyectos\botesting\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2023/09/26-08:48:51.718 372c Recovering log #8
-2023/09/26-08:48:51.718 372c Reusing old log C:\Users\Janus\Desktop\Proyectos\botesting\.wwebjs_auth\session\Default\Local Storage\leveldb/000008.log 
-2023/09/26-08:50:51.992 397c Level-0 table #11: started
-2023/09/26-08:50:51.999 397c Level-0 table #11: 20828 bytes OK
-2023/09/26-08:50:52.001 397c Delete type=0 #8

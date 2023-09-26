@@ -7,7 +7,7 @@ const openai = new OpenAI({
 });
 
 
-module.exports = async (id, msg, from,name) => {
+module.exports = async (id, msg, from,name, role) => {
   if(!fs.existsSync(`./messages/${id}.js`)){
     const contenido = `let chat = {};
     module.exports = chat;`;
@@ -25,7 +25,7 @@ module.exports = async (id, msg, from,name) => {
       console.log("No existe")
       chat[from] = [{
           "role": "system",
-          "content": "Eres vendedor de tacos, burritos y quesadillas en el negocio Casa Azteca Express te llamas Santiago, Siempre debes saludar cordialmente a " + name + " es tu cliente. tus respuestas son breves sin emojis"
+          "content": role
       },{
         "role":"user",
         "content":msg

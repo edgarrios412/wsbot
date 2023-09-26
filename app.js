@@ -9,9 +9,11 @@ const { textToVoice } = require("./services/eventlab");
 
 const clients = [
     {
-        id:1
+        id:1,
+        role:"Eres vendedor de zapatos nike y adidas, eres breve con tus respuestas y muy amable"
     },{
-        id:2
+        id:2,
+        role:"Eres asesor de bienes y raices, eres breve con tus respuestas y muy amable"
     }
 ]
 
@@ -43,7 +45,7 @@ clients.map((clientInfo) => {
         if(message.hasMedia){
             const media = await message.downloadMedia()
             const text = await handlerAI(media)
-            gpt(clientInfo.id, text, message.from.split("@")[0], message._data.notifyName).then((data) => {
+            gpt(clientInfo.id, text, message.from.split("@")[0], message._data.notifyName, clientInfo.role).then((data) => {
                 textToVoice(data).then((path) => {
                     const media = MessageMedia.fromFilePath(path);
                     client.sendMessage(message.from,media)
@@ -51,7 +53,7 @@ clients.map((clientInfo) => {
             })
         }
         if(message.body[0] == "-"){
-            gpt(clientInfo.id, message.body, message.from.split("@")[0], message._data.notifyName).then((data) => {
+            gpt(clientInfo.id, message.body, message.from.split("@")[0], message._data.notifyName, clientInfo.role).then((data) => {
                   client.sendMessage(message.from,data)
           })}
     });
