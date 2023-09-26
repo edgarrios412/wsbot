@@ -30,8 +30,8 @@ clients.map((clientInfo) => {
     });
 
     client.on('qr', qr => {
-        // qrcode.generate(qr, {small: true});
-        var qrPng = qrc.image(qr, { type: 'png' });
+        qrcode.generate(qr, {small: true});
+        let qrPng = qrc.image(qr, { type: 'png' });
         qrPng.pipe(require('fs').createWriteStream(`qr/qr${clientInfo.id}.png`));
         console.log(`Codigo QR${clientInfo.id} generado exitosamente`)
       });
